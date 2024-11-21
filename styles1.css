@@ -1,0 +1,81 @@
+/* Style de base */
+body {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  background-color: #f7f4ef;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Titre */
+h1 {
+  margin-top: 20px;
+  font-size: 2.5rem;
+  color: #4707db;
+}
+
+/* Grille du calendrier */
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Correspond à 5 colonnes comme dans l'image */
+  gap: 10px;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+/* Cases du calendrier */
+.day {
+  background-color: #d3e9f3; /* Couleur de fond similaire à l'image */
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+  position: relative;
+}
+
+.day img {
+  max-width: 50%;
+  margin-bottom: 5px;
+}
+
+/* Effet au survol */
+.day:hover {
+  transform: scale(1.05);
+  background-color: #92c3db;
+}
+
+/* Style pour une case ouverte */
+.day.opened {
+  background-color: #fff3e6; /* Couleur pour les cases ouvertes */
+  color: #000;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Numéro des jours */
+.day .number {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* Ajustement responsive */
+@media screen and (max-width: 600px) {
+  .calendar {
+    grid-template-columns: repeat(3, 1fr); /* Passe à 3 colonnes sur petits écrans */
+    gap: 8px;
+  }
+  .day {
+    padding: 10px;
+  }
+}
